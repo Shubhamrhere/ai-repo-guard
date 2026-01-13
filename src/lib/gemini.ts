@@ -109,7 +109,8 @@ export const analyzeRepository = async (repoUrl: string): Promise<AnalysisResult
 
     // Initialize Gemini
     const genAI = getGeminiClient();
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    // Using gemini-pro as it's stable and widely available
+    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
     // Create prompt for security analysis
     const prompt = `You are a cybersecurity expert specializing in GitHub repository security analysis. Analyze the following repository information and provide a detailed security assessment.
